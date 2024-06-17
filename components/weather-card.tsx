@@ -30,18 +30,15 @@ export async function WeatherCard({
   const data = await getWeather();
 
   return (
-    <Card className="w-full max-w-sm bg-blue-400 mt-4">
-      <CardContent className="p-6 flex flex-col items-center gap-4">
+    <Card className="w-full max-w-sm mt-4">
+      <CardContent className="p-6 flex flex-col items-center gap-4 rounded-md bg-blue-400">
         <div className="flex items-center gap-4">
           <div className="text-6xl font-bold">
             {data.temperature} {data.unit}
           </div>
           <SunIcon className="w-12 h-12" />
         </div>
-        <div className="text-lg font-medium">Sunny</div>
-        <div className="text-gray-500 dark:text-gray-400">
-          {data.description}
-        </div>
+        <div className="text-white font-bold">{data.description}</div>
       </CardContent>
     </Card>
   );
